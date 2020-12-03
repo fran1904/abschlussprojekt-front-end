@@ -1,27 +1,28 @@
 import './App.css';
+import StocksPage from './components/StocksPage';
 import Home from './components/Home';
-import Stock from './components/MOHAMMAD/Stock';
+import SideNav from './components/SideNav';
 
-
-
-
-
-// import Stock from './components/MOHAMMAD/Stock';
-
-
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      
-      
-      {/* <Stock/> */}
-     
-      <Home/>
-      <Stock/>
-      
-    </div>
+    <Router>
+    <SideNav />
+
+    <Switch>
+        <Route path="/" exact component={ Home } />  
+        <Route path="/stocks" component={ StocksPage } /> 
+        {/* <Route path="/forex" component={ ForexPage } />  */}
+        {/* <Route path="/crypto" component={ CryptoPage } />  */}
+        {/* <Route path="/news" component={ NewsPage } />  */}
+    </Switch>
+  
+  </Router>
   );
 }
 
