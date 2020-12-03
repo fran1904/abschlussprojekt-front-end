@@ -1,10 +1,28 @@
 import './App.css';
+import StocksPage from './components/StocksPage';
+import Home from './components/Home';
+import SideNav from './components/SideNav';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      
-    </div>
+    <Router>
+    <SideNav />
+
+    <Switch>
+        <Route path="/" exact component={ Home } />  
+        <Route path="/stocks" component={ StocksPage } /> 
+        {/* <Route path="/forex" component={ ForexPage } />  */}
+        {/* <Route path="/crypto" component={ CryptoPage } />  */}
+        {/* <Route path="/news" component={ NewsPage } />  */}
+    </Switch>
+  
+  </Router>
   );
 }
 
