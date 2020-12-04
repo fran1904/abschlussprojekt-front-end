@@ -3,6 +3,7 @@ import { TickerSymbols, renderTickerSymbol } from "../ticker-data";
 import Autocomplete from "react-autocomplete";
 import Plot from "react-plotly.js";
 import "../StocksPage.css";
+import AverageDownCalc from './AverageDownCalc'
 
 class StocksPage extends Component {
   state = {
@@ -67,6 +68,7 @@ class StocksPage extends Component {
   render() {
     return (
       <div className="TickerInput">
+
         <header className="stocks-header">
           <h2 className="headline">Stocks</h2>
           <div className="autocomplete-wrapper">
@@ -113,7 +115,7 @@ class StocksPage extends Component {
         </main>
 
 
-
+        <AverageDownCalc />
 
       </div>
     );

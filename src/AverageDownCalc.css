@@ -1,0 +1,13 @@
+.avg-calculator{
+    width: 500px; 
+    /* change this to 100% */
+}
+.display-flex {
+    display: flex;
+}
+.justify-around{
+    justify-content: space-around;
+}
+.w-half {
+    width: 46%;
+}
