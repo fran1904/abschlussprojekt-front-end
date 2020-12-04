@@ -38,7 +38,7 @@ class SideNav extends React.Component {
             onStateChange={(state) => this.handleStateChange(state)}
           >
                <nav className="main-nav">
-               <Link to="/"><img className="logo" src="logo.svg" alt="logo" style={{paddingLeft: "13px", marginBottom: "60px"}}/></Link>
+               <Link to="/"><img className="logo" src="logo.svg" alt="logo" style={{paddingLeft: "2%", marginBottom: "60px"}}/></Link>
 
             <ul>
      

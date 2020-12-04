@@ -70,7 +70,10 @@ class StocksPage extends Component {
       <div className="TickerInput">
 
         <header className="stocks-header">
+        <div id="stock-crypto">
           <h2 className="headline">Stocks</h2>
+          <p className="byline">With all of the tools available in today's market</p>
+          </div>
           <div className="autocomplete-wrapper">
             <Autocomplete
               value={this.state.tickerValue}
@@ -91,7 +94,7 @@ class StocksPage extends Component {
           </div>
         </header>
         <main className="stocks-main">
-          <p className="byline">With all of the tools available in today's market</p>
+          
           <h2 className="stocks-displayed-firm">{this.state.initialLoadOver ? this.state.tickerValue : 'AMZN'}</h2>
     
           <div className="graph">
@@ -102,12 +105,12 @@ class StocksPage extends Component {
                 y: this.state.yAxisVals,
                 type: "scatter",
                 mode: "lines+markers",
-                marker: { color: "red" },
+                marker: { color: "blue" },
               },
             ]}
             layout={{
               title: "Timeframe: Daily",
-              width: 1100,
+              width: 1200,
               height: 700
             }}
           />

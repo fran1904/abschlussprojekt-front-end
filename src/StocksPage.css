@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
   }
   div.TickerInput{
@@ -87,4 +87,47 @@ div.graph {
 
 .stocks-displayed-firm{
   margin-bottom:0;
+} */
+.stocks-header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-left: 10%;
+  padding-top: 2%;
+  margin-bottom: 4%;
+}
+.byline {
+  height: 10vh;
+  width: 100%;
+  margin-right: 50%;
+}
+.autocomplete-wrapper {
+  width: 80%;
+}
+.autocomplete-wrapper div {
+  width: 70%;
+}
+.autocomplete-wrapper input,
+.dropdown {
+  height: 3vh;
+  width: 33%;
+  margin-left: 73%;
+  border-color: #0f67ff;
+  box-shadow: none;
+  outline: none;
+}
+.stocks-main h2 {
+  margin-left: 20%;
+  color: blue;
+}
+.graph {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+img.search-icon {
+  position: relative;
+  position: absolute;
+  right: 8%;
+  width: 36px;
 }
