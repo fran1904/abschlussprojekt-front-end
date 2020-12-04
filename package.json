@@ -11,6 +11,8 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-axios": "^2.0.3",
+    "react-autocomplete": "^1.8.1",
+    "react-burger-menu": "^2.9.2",
     "react-dom": "^17.0.1",
     "react-plotly.js": "^2.5.0",
     "react-router-dom": "^5.2.0",

@@ -1,0 +1,133 @@
+/* * {
+    box-sizing: border-box;
+  }
+  div.TickerInput{
+      color: #444444;
+      height: 100vh;
+      margin-left: 20%;
+  }
+ .autocomplete-wrapper input {
+    border: 1px solid transparent;
+    border-radius:6px;
+    padding: 12px 15px;
+    font-size: 14px;
+    width: 100%;
+    background: #FEF8F8;
+  }
+  
+  .autocomplete-wrapper input:focus {
+    border-color: #0F67FF;
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .autocomplete-wrapper .dropdown {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+    max-height: 280px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #0F67FF;
+    border-top: none;
+  }
+  
+  .autocomplete-wrapper .item  {
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 15px;
+  }
+  
+  .autocomplete-wrapper .item.selected-item {
+    background-color: #0069ff;
+    color: #FAFBFC;
+  }
+  
+  .autocomplete-wrapper .item:hover {
+    background-color: #0069ff;
+    color: #FAFBFC;
+  } 
+
+h2.headline{
+    margin: 30px 0 0 0;
+    font-size: 2rem;
+}
+.stocks-header{
+    display: flex;
+    justify-content: space-between;
+    padding:0 3%;
+
+}
+div.autocomplete-wrapper > div {
+    width: 350px;
+}
+
+img.search-icon{
+display: inline-block;
+margin-left: 12px;
+width: 36px;
+}
+div.autocomplete-wrapper{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+main.stocks-main{
+    padding: 0 3%;
+}
+p.byline{
+    color: #666666;
+}
+
+div.graph {
+    text-align: center;
+}
+
+.stocks-displayed-firm{
+  margin-bottom:0;
+} */
+.stocks-header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-left: 10%;
+  padding-top: 2%;
+  margin-bottom: 4%;
+}
+.byline {
+  height: 10vh;
+  width: 100%;
+  margin-right: 50%;
+}
+.autocomplete-wrapper {
+  width: 80%;
+}
+.autocomplete-wrapper div {
+  width: 70%;
+}
+.autocomplete-wrapper input,
+.dropdown {
+  height: 3vh;
+  width: 33%;
+  margin-left: 73%;
+  border-color: #0f67ff;
+  box-shadow: none;
+  outline: none;
+}
+.stocks-main h2 {
+  margin-left: 20%;
+  color: blue;
+}
+.graph {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+img.search-icon {
+  position: relative;
+  position: absolute;
+  right: 8%;
+  width: 36px;
+}
