@@ -2,6 +2,7 @@ import './App.css';
 import StocksPage from './components/StocksPage';
 import Home from './components/Home';
 import SideNav from './components/SideNav';
+import CryptoGragh from './components/MOHAMMAD/CryptoGragh';
 
 import {
   BrowserRouter as Router,
@@ -18,7 +19,7 @@ function App() {
         <Route path="/" exact component={ Home } />  
         <Route path="/stocks" component={ StocksPage } /> 
         {/* <Route path="/forex" component={ ForexPage } />  */}
-        {/* <Route path="/crypto" component={ CryptoPage } />  */}
+        <Route path="/crypto" component={ CryptoGragh} /> 
         {/* <Route path="/news" component={ NewsPage } />  */}
     </Switch>
   

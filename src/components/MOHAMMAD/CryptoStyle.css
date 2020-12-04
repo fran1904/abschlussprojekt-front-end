@@ -59,19 +59,59 @@
 .out-map td {
   font-size: 20px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 1130px) {
+  #crypto-container {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1000px) {
   #crypto-container {
     font-size: 18px;
   }
 }
+@media only screen and (max-width: 600px) {
+  #crypto-container {
+    font-size: 15px;
+  }
+  .out-map td {
+    font-size: 16px;
+  }
+  .name-img {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #crypto-container {
+    font-size: 12px;
+  }
+  .out-map td {
+    font-size: 14px;
+  }
+  .name-img {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  #crypto-container {
+    font-size: 10px;
+  }
+  .out-map td {
+    font-size: 12px;
+  }
+  .name-img {
+    font-size: 13px;
+  }
+}
 
-/* StockStyle____________________ */
+/* CryptoGraphStyle____________________ */
+
 #stocks-header {
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
-  margin-left: 20%;
-  margin-top: 2%;
+  width: 90%;
+  margin-left: 10%;
+  padding-top: 2%;
+  /* margin-top: 2%; */
   margin-bottom: 4%;
 }
 #stocks-header p {
@@ -85,7 +125,7 @@
 }
 #autocomplete-wrapper input {
   height: 3vh;
-  width: 100%;
+  width: 90%;
   border-color: #0f67ff;
   box-shadow: none;
   outline: none;
@@ -98,4 +138,10 @@
   display: flex;
   justify-content: center;
   width: 100%;
+}
+img#search-icon {
+  position: relative;
+  position: absolute;
+
+  width: 36px;
 }
