@@ -1,0 +1,11 @@
+#exchange-section {
+    width: 600px;
+    background: lightgrey;
+    padding: 10px;
+    margin: 0 auto;
+}
+.currencies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
