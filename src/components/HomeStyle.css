@@ -3,13 +3,10 @@
   padding: 0;
 }
 .box1 {
-  background-color: lawngreen;
 }
 .box2 {
-  background-color: red;
 }
 .box4 {
-  background-color: blue;
 }
 #Home-main div {
   width: 100%;
@@ -20,19 +17,14 @@
   justify-content: center;
 }
 #Home-main {
-  width: 80%;
+  width: 100%;
   min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-left: 20%;
 }
-
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   #Home-main {
-    width: 80%;
-
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    margin-left: 20%;
   }
 }

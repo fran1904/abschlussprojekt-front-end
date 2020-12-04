@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TickerSymbols, renderTickerSymbol } from "../MOHAMMAD/Stock1";
+import { TickerSymbols, renderTickerSymbol } from "./Stock1";
 import Autocomplete from "react-autocomplete";
 import Plot from "react-plotly.js";
 
