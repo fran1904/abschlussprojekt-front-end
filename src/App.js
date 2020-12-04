@@ -1,7 +1,9 @@
 import './App.css';
+
 import StocksPage from './components/StocksPage';
 import Home from './components/Home';
 import SideNav from './components/SideNav';
+import NewsPage from './components/NewsPage';
 
 import {
   BrowserRouter as Router,
@@ -19,7 +21,7 @@ function App() {
         <Route path="/stocks" component={ StocksPage } /> 
         {/* <Route path="/forex" component={ ForexPage } />  */}
         {/* <Route path="/crypto" component={ CryptoPage } />  */}
-        {/* <Route path="/news" component={ NewsPage } />  */}
+         <Route path="/news" component={ NewsPage } />  
     </Switch>
   
   </Router>

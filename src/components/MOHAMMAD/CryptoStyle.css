@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#crypto-container {
+  width: 100%;
+  font-size: 20px;
+}
+.crypto-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#crypto-table {
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid #667c99;
+  background-color: #fef8f8;
+}
+#crypto-table td {
+  padding-bottom: 3%;
+  padding-top: 3%;
+  color: #667c99;
+  padding-left: 10%;
+  width: 33%;
+}
+.crypto-table td {
+  text-align: left;
+  width: 30%;
+  padding: 4%;
+}
+.crypto-table tr {
+  border-bottom: 2px solid #667c99;
+}
+/* .crypto-table tr:first-of-type {
+  background-color: aqua;
+} */
+.crypto-table .red {
+  color: red;
+}
+.crypto-table .green {
+  color: green;
+}
+
+.name-img {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  font-size: 25px;
+}
+
+.name-img img {
+  width: 60%;
+  margin-right: 6%;
+}
+
+.out-map {
+  width: 70%;
+}
+.out-map td {
+  font-size: 20px;
+}
+@media only screen and (min-width: 768px) {
+  #crypto-container {
+    font-size: 18px;
+  }
+}
+
+/* StockStyle____________________ */
+#stocks-header {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-left: 20%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+#stocks-header p {
+  width: 50%;
+}
+#autocomplete-wrapper {
+  width: 100%;
+}
+#autocomplete-wrapper div {
+  width: 70%;
+}
+#autocomplete-wrapper input {
+  height: 3vh;
+  width: 100%;
+  border-color: #0f67ff;
+  box-shadow: none;
+  outline: none;
+}
+#stocks-main h2 {
+  margin-left: 20%;
+  color: blue;
+}
+#graph {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
