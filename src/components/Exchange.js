@@ -22,7 +22,7 @@ class Exchange extends Component {
     )
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+
         this.setState(
           {
             data: result,
@@ -35,7 +35,7 @@ class Exchange extends Component {
             )
               .then((res) => res.json())
               .then((result) => {
-                console.log(result);
+ 
                 this.setState({
                   data2: result,
                   isLoaded: true,
