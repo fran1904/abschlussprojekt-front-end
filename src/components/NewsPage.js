@@ -22,7 +22,7 @@ class NewsPage extends Component {
       <div>
         <HeaderNews />
         <div className="divs">
-          {this.state.data && this.state.data.map((abc, i) => (
+          {this.state.data && this.state.data.map((abc) => (
             <article className="articles" key={abc.id}>
               <img src={abc.urlToImage} alt=""></img>
               <h1>{abc.title}</h1>
