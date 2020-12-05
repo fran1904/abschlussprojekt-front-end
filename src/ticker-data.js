@@ -24,7 +24,18 @@ export function TickerSymbols() {
             "id": "5",
             "title": "AMZN",
             "name": "Amazon.com Inc."
+        },
+        {   
+            "id": "6",
+            "title": "TX",
+            "name": "Ternium SA"
+        },
+        {   
+            "id": "7",
+            "title": "BRK.B",
+            "name": "Berkshire"
         }
+
     ]
         
 }

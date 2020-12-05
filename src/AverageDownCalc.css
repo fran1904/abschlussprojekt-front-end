@@ -1,13 +1,84 @@
 .avg-calculator{
-    width: 500px; 
-    /* change this to 100% */
+    width: 100%; 
+    color: #4C4C66;
 }
-.display-flex {
+
+/* Table styles */
+
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+    display: table-row;
+    height: 56px;
     display: flex;
+    align-items: center;
 }
-.justify-around{
-    justify-content: space-around;
+.divTableRow > * {
+    width: 50%;
 }
-.w-half {
-    width: 46%;
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	/* border: 1px solid #999999; */
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.avg-calculator .bold .divTableCell{
+    font-weight: 700;
+}
+.avg-calculator input{
+    width: 100%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    background: transparent;
+}
+.avg-calculator .even{
+    background: #FEF8F8;
+}
+.avg-calculator button{
+background: #53B9EA;
+color: #ffffff;
+font-size: 1.2rem;
+line-height: 1.5;    
+/* use to set xy pad */
+min-width: 100%;
+border: none;
+padding: .375rem .75rem;
+display: inline-block;
+cursor: pointer;
+text-align: center;
+border-radius: 4px;
+font-weight: 700;
+user-select: none;
+vertical-align: middle;
+white-space: nowrap;
+transition: background .5s ease;
+}
+.avg-calculator button:hover{
+background: rgb(21, 164, 230);
+}
+.avg-calculator h3 {
+    margin-left: 10px;
 }

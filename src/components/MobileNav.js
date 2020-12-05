@@ -1,13 +1,12 @@
-import "../sidenav.css";
 import { slide as Menu } from 'react-burger-menu'
 import React from 'react';
 import { Link } from "react-router-dom";
 
-class SideNav extends React.Component {
+class MobileNav extends React.Component {
     constructor (props) {
       super(props)
       this.state = {
-        menuOpen: true
+        menuOpen: false
       }
     }
   
@@ -31,9 +30,9 @@ class SideNav extends React.Component {
   
     render () {
       return (
-        <div className="sidenav">
+        <div className="mobilenav">
           <Menu
-            width={ '18%' } 
+            width={ '100%' } 
             isOpen={this.state.menuOpen}
             onStateChange={(state) => this.handleStateChange(state)}
           >
@@ -42,19 +41,19 @@ class SideNav extends React.Component {
 
             <ul>
                 <li className="homelink">
-                    <Link to="/">Dashboard</Link>
+                    <Link to="/" onClick={() => this.closeMenu()}>Dashboard</Link>
                 </li>
                 <li className="stockslink">
-                    <Link to="/stocks">Stocks</Link>
+                    <Link to="/stocks" onClick={() => this.closeMenu()}>Stocks</Link>
                 </li>
                 <li className="forexlink">
-                    <Link to="/forex">Forex</Link>
+                    <Link to="/forex" onClick={() => this.closeMenu()}>Forex</Link>
                 </li>
                 <li className="cryptolink">
-                    <Link to="/crypto">Crypto</Link>
+                    <Link to="/crypto" onClick={() => this.closeMenu()}>Crypto</Link>
                 </li>
                 <li className="newslink">
-                    <Link to="/news">News</Link>
+                    <Link to="/news" onClick={() => this.closeMenu()}>News</Link>
                 </li>
             </ul>
         </nav>
@@ -66,4 +65,4 @@ class SideNav extends React.Component {
     }
   }
   
-  export default SideNav;
+  export default MobileNav;
