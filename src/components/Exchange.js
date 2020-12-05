@@ -1,102 +1,141 @@
 import React, { Component } from 'react';
 import '../Exchange.css'
 
+
+
 class Exchange extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoaded: false,
-            data: "",
-            input1: "",
-            input2: "",
-            AmountInCurrency1: "1",
-            EurRateCurrency2: "1",
-            changeDirection: false,
-            lastinput: "",
-            data2:""
-
-        }
+    constructor() {
+      super();
+      this.state = {
+        isLoaded: false,
+        rates: [],
+        data: [],
+        amountToConvert: "",
+        baseCurrency: 1,
+        finalCurrency: 1,
+        data2: "",
+      };
     }
-    componentDidMount() {
-        fetch("http://data.fixer.io/api/latest?access_key=f55714fc68544efcf79c477eded056a2")
-            .then(res => res.json())
-            .then(
-                (result) => {
+ 
+   componentDidMount () {
+    fetch(`http://data.fixer.io/api/latest?access_key=f55714fc68544efcf79c477eded056a2`)
+
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
+            this.setState(
+                {
+                    data: result,
+                    currencies: Object.keys(result['rates']).sort(),
+                    rates: Object.values(result.rates),
+                }, 
+                () =>  fetch(`http://data.fixer.io/api/symbols?access_key=f55714fc68544efcf79c477eded056a2`)
+                .then(res => res.json())
+                .then(result => {
                     console.log(result);
-                    this.setState({
-                        isLoaded: true,
-                        data: result
-                    },
-                    () =>  fetch(`http://data.fixer.io/api/symbols?access_key=f55714fc68544efcf79c477eded056a2`)
-                    .then(res => res.json())
-                    .then(result => {
-                        console.log(result);
-                        this.setState(
-                            {
-                                data2: result,
-                                isLoaded: true
-                            }
-                        )   
-                    })
-                    )
+                    this.setState(
+                        {
+                            data2: result,
+                            isLoaded: true
+                        }
+                    )   
                 })
+            )
+        })
     }
-    handleSelect = (event) => {
-        this.setState({ [event.target.name]: event.target.value }, () => {
-            this.handleCalc(this.state.lastInput)
-        });
-        // } (event) => this.calc(event));
-    }
-   
-    handleInput = (event) => {
-        // let input = event.target.name; // input1 oder input2
+
+    handleSelectBaseCurrency = (e) => {
         this.setState({ 
+            baseCurrency: e.target.value}
+        )}
+
+    handleSelectFinalCurrency = (e) => {
+        // let currency2 = e.target.key
+        this.setState({
+            finalCurrency: e.target.value,
+            // currency2: e.target.key
+        }
+        );
+    }  
+   
+    getAmount = (event) => {
+        this.setState({
             [event.target.name]: event.target.value,
-            lastInput: event.target.name
-        }, () => {
-            if (event.target.name === "input1") {
-                this.handleCalc('input1')
-            } else if (event.target.name === "input2") {
-                this.handleCalc('input2')
+        // amountToConvert: e.target.value
+        },() => {
+            if (event.target.name === "amountToConvert") {
+                this.convertAmount('amountToConvert')
+            } else if (event.target.name === "amountInverseToConvert") {
+                this.convertAmount('amountInverseToConvert')
             }
-        });
+      
+        })
     }
-    handleCalc = (para) => {
-        if (para === "input1") {
-            this.setState({ input2: (((1 / this.state.AmountInCurrency1) * this.state.EurRateCurrency2) * this.state.input1).toFixed(4) });
-        } else if (para === "input2") {
-            this.setState({ input1: (((1 / this.state.EurRateCurrency2) * this.state.AmountInCurrency1) * this.state.input2).toFixed(4) });
+    convertAmount =(para) => {
+        console.log(this.state.finalCurrency)
+
+        if (para === "amountToConvert") {
+            this.setState({ amountInverseToConvert: (((1 / this.state.baseCurrency) * this.state.finalCurrency) * this.state.amountToConvert).toFixed(4) });
+        } else if (para === "amountInverseToConvert") {
+            this.setState({ amountToConvert: (((1 / this.state.finalCurrency) * this.state.baseCurrency) * this.state.amountInverseToConvert).toFixed(4) });
         }
     }
+         
+  
     render() {
-        return (
-            <section id="exchange-section">
-            
-                <section id="converter">
-                    {this.state.isLoaded ?
-                     <div className="currencies">
-                        <h2 class="label_currency">Convert from: {this.state.baseCurrency}</h2>
-                        <select name="AmountInCurrency1" id="" onChange={this.handleSelect} class="drop-menu">
-                            <option value="1">EUR</option>
-                            {Object.keys(this.state.data.rates).map((ele, key) => <option value={this.state.data.rates[ele]} key={key}>{ele}</option>)}
-                        </select>
-                        <h2 class="label_currency">Convert to: {this.state.finalCurrency}</h2>
-                        <select name="EurRateCurrency2" id="" onChange={this.handleSelect} class="drop-menu">
-                            <option value="1">EUR</option>
-                            {Object.keys(this.state.data.rates).map((ele, key) => <option value={this.state.data.rates[ele]} key={key}>{ele}</option>)}
-                        </select>
+
+        return(
+        <section id="exchange-section">
+            <h2 class="exchange-h2">Currency converter</h2>
+        {this.state.isLoaded ? 
+            <section id="converter">
+                
+                <div className="convert">
+                    {/* <div className="single-currency"> */}
+                    <h2 class="convert_h2">Convert from:</h2>
+
+                    <select  value={this.state.baseCurrency} onChange={this.handleSelectBaseCurrency} class="convert-drop_menu">
+                        {/* <option key="EURO" value="1">EUR : Euro</option> */}
+
+                        {Object.keys(this.state.data.rates).map(    (currency, key)=>
+                            <option key={key} value={this.state.data.rates[currency]}> 
+                            {currency} : {this.state.data2.symbols[currency]} </option>  
+                        )};
+                    </select> 
+                    
+                    <div className="convert-amount">
+                        <h2 class="amount_h2">Amount:</h2>
+                        <input type="number" name="amountToConvert" value={this.state.amountToConvert} onChange={this.getAmount} className="input-amount">
+                        </input>  
+                    </div>  
+                </div>   
+                <img src="./arrows-blue-versetzt.png" alt="" className="convert_arrows"/>
+                <div className="convert">
+                    <h2 class="convert_h2">Convert to:</h2>
+                    
+                    <select  value={this.state.finalCurrency} onChange={this.handleSelectFinalCurrency} class="convert-drop_menu">
+                    
+                        {/* <option key="EUR" value="1">EUR : Euro</option> */}
+                        {Object.keys(this.state.data.rates).map((currency, key)=>
+                        <option key={key} value={this.state.data.rates[currency]} className="option"> 
+                    {currency}  :  {this.state.data2.symbols[currency]}</option>  )};
+                        
+                    </select>
+                    <div className="convert-amount">
+                        <h2 class="amount_h2">Amount:</h2>
+                        <input type="number" name="amountInverseToConvert" value={this.state.amountInverseToConvert} onChange={this.getAmount} className="input-amount"/> 
                     </div>
-                    : "Loading"}
-
-
-
-                        <h2>Amount you wish to convert:</h2>
-                <input type="number" name="input1" value={this.state.input1} onChange={this.handleInput} />
-                <input type="number" name="input2" value={this.state.input2} onChange={this.handleInput} />
-                </section>
+                </div> 
+               
+         
+                    
+                {/* </section> */}
             </section>
-        );
-    }
+                : "Loading"}
+        </section>
+           
+      );
+  }
 }
-
+  
 export default Exchange;
