@@ -13,7 +13,7 @@
 #crypto-table {
   border-collapse: collapse;
   width: 100%;
-  border-bottom: 2px solid #667c99;
+  border-bottom: 1px solid #667c99;
   background-color: #fef8f8;
 }
 #crypto-table td {
@@ -29,7 +29,7 @@
   padding: 4%;
 }
 .crypto-table tr {
-  border-bottom: 2px solid #667c99;
+  border-bottom: 1px solid #d5d5d5;
 }
 /* .crypto-table tr:first-of-type {
   background-color: aqua;
@@ -254,11 +254,11 @@ img#search-icon {
     width: 100%;
   }
 }
-@media only screen and (max-width: 450px) {
+/* @media only screen and (max-width: 450px) {
   #graph6 {
-    /* transform: rotate(-90deg); */
+    transform: rotate(-90deg);
   }
-}
+} */
 
 #crypto-container {
   font-size: 1.1rem;

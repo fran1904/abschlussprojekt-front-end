@@ -18,7 +18,7 @@ class Exchange extends Component {
 
   componentDidMount() {
     fetch(
-      `https://data.fixer.io/api/latest?access_key=f55714fc68544efcf79c477eded056a2`
+      `http://data.fixer.io/api/latest?access_key=f55714fc68544efcf79c477eded056a2`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -31,7 +31,7 @@ class Exchange extends Component {
           },
           () =>
             fetch(
-              `https://data.fixer.io/api/symbols?access_key=f55714fc68544efcf79c477eded056a2`
+              `http://data.fixer.io/api/symbols?access_key=f55714fc68544efcf79c477eded056a2`
             )
               .then((res) => res.json())
               .then((result) => {
