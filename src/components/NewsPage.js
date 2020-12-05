@@ -13,7 +13,6 @@ class NewsPage extends Component {
       .then((Response) => Response.json())
       .then((json) => {
         this.setState({ data: json.articles });
-        console.log(this.state.data);
       });
   }
 
