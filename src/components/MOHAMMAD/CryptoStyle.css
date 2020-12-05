@@ -5,6 +5,7 @@
 #crypto-container {
   width: 100%;
   font-size: 20px;
+
 }
 .crypto-table {
   border-collapse: collapse;
@@ -144,4 +145,12 @@ img#search-icon {
   position: absolute;
 
   width: 36px;
+}
+
+
+#crypto-container {
+  font-size: 1.1rem;
+}
+p#name{
+  font-size: 1.2rem;
 }

@@ -3,7 +3,6 @@ import { TickerSymbols, renderTickerSymbol } from "../ticker-data";
 import Autocomplete from "react-autocomplete";
 import Plot from "react-plotly.js";
 import "../StocksPage.css";
-import AverageDownCalc from './AverageDownCalc'
 
 class StocksPage extends Component {
   state = {
@@ -92,6 +91,7 @@ class StocksPage extends Component {
            
            <img className="search-icon" onClick={this.handleSearchClick} src="/search-icon.svg" alt="search" />
           </div>
+         
         </header>
         <main className="stocks-main">
           
@@ -105,7 +105,7 @@ class StocksPage extends Component {
                 y: this.state.yAxisVals,
                 type: "scatter",
                 mode: "lines+markers",
-                marker: { color: "blue" },
+                marker: { color: "#006699" },
               },
             ]}
             layout={{
@@ -116,10 +116,6 @@ class StocksPage extends Component {
           />
           </div>
         </main>
-
-
-        <AverageDownCalc />
-
       </div>
     );
   }
