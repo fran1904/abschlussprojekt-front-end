@@ -1,4 +1,4 @@
-/* * {
+* {
     box-sizing: border-box;
   }
   div.TickerInput{
@@ -87,8 +87,12 @@ div.graph {
 
 .stocks-displayed-firm{
   margin-bottom:0;
-} */
-.stocks-header {
+}
+
+
+
+/* MOHAMMAD */
+/* .stocks-header {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -130,4 +134,4 @@ img.search-icon {
   position: absolute;
   right: 8%;
   width: 36px;
-}
+} */

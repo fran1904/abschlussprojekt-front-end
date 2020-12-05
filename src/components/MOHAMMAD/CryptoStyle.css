@@ -259,3 +259,10 @@ img#search-icon {
     /* transform: rotate(-90deg); */
   }
 }
+
+#crypto-container {
+  font-size: 1.1rem;
+}
+p#name {
+  font-size: 1.2rem;
+}
