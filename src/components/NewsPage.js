@@ -23,7 +23,7 @@ class NewsPage extends Component {
         <HeaderNews />
         <div className="divs">
           {this.state.data.map((abc) => (
-            <article className="articles" key={abc.id}>
+            <article className="articles" >
               <img src={abc.urlToImage} alt=""></img>
               <h1>{abc.title}</h1>
               <p id="content">{abc.content}</p>
