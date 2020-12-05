@@ -134,14 +134,128 @@
   margin-left: 20%;
   color: blue;
 }
-#graph {
+#graph1 {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+#graph2 {
+  display: none;
+}
+#graph3 {
+  display: none;
+}
+#graph4 {
+  display: none;
+}
+#graph5 {
+  display: none;
+}
+#graph6 {
+  display: none;
 }
 img#search-icon {
   position: relative;
   position: absolute;
 
   width: 36px;
+}
+
+/* Graph Responsiv */
+
+@media only screen and (max-width: 1100px) {
+  #graph1 {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  #graph2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  img#search-icon {
+    position: relative;
+    position: absolute;
+
+    width: 30px;
+  }
+}
+@media only screen and (max-width: 880px) {
+  #graph2 {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  #graph3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  img#search-icon {
+    position: relative;
+    position: absolute;
+
+    width: 25px;
+  }
+}
+@media only screen and (max-width: 730px) {
+  #graph3 {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  #graph4 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  img#search-icon {
+    position: relative;
+    position: absolute;
+
+    width: 30px;
+  }
+  #stocks-header p {
+    width: 80%;
+    margin-bottom: 15%;
+    margin-top: 10%;
+  }
+  #stocks-header {
+    display: block;
+    margin-top: 20%;
+  }
+  #stocks-main h2 {
+    margin-left: 10%;
+    color: blue;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #graph4 {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  #graph5 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  #graph5 {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  #graph6 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  #graph6 {
+    /* transform: rotate(-90deg); */
+  }
 }

@@ -1,4 +1,7 @@
+
+
 import React, { Component } from 'react';
+
 import '../Exchange.css'
 
 class Exchange extends Component {
@@ -93,7 +96,11 @@ class Exchange extends Component {
                         <h2>Amount you wish to convert:</h2>
                 <input type="number" name="input1" value={this.state.input1} onChange={this.handleInput} />
                 <input type="number" name="input2" value={this.state.input2} onChange={this.handleInput} />
+                {/* <h1 onClick={this.handleSwap} className="swap">
+                    &#8595;&#8593;
+                  </h1> */}
                 </section>
+               
             </section>
         );
     }
