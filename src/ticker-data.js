@@ -39,6 +39,11 @@ export function TickerSymbols() {
             "id": "8",
             "title": "INTC",
             "name": "Intel Corporation"
+        },
+        {   
+            "id": "9",
+            "title": "GAZ",
+            "name": "Gazprom"
         }
 
     ]
