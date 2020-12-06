@@ -61,11 +61,11 @@
 background: #53B9EA;
 color: #ffffff;
 font-size: 1.2rem;
-line-height: 1.5;    
+line-height: 0.15;    
 /* use to set xy pad */
 min-width: 100%;
 border: none;
-padding: .375rem .75rem;
+padding: 1.2rem .75rem;
 display: inline-block;
 cursor: pointer;
 text-align: center;

@@ -16,7 +16,7 @@
   }
   
   .autocomplete-wrapper input:focus {
-    border-color: #0F67FF;
+    border-color: #006699;
     box-shadow: none;
     outline: none;
   }
@@ -29,7 +29,7 @@
     overflow: hidden;
     overflow-y: auto;
     background-color: #ffffff;
-    border: 1px solid #0F67FF;
+    border: 1px solid #006699;
     border-top: none;
   }
   
@@ -41,12 +41,12 @@
   }
   
   .autocomplete-wrapper .item.selected-item {
-    background-color: #0069ff;
+    background-color: #006699;
     color: #FAFBFC;
   }
   
   .autocomplete-wrapper .item:hover {
-    background-color: #0069ff;
+    background-color: #006699;
     color: #FAFBFC;
   } 
 
@@ -88,50 +88,51 @@ div.graph {
 .stocks-displayed-firm{
   margin-bottom:0;
 }
-
-
-
-/* MOHAMMAD */
-/* .stocks-header {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  margin-left: 10%;
-  padding-top: 2%;
-  margin-bottom: 4%;
-}
-.byline {
-  height: 10vh;
-  width: 100%;
-  margin-right: 50%;
-}
-.autocomplete-wrapper {
-  width: 80%;
-}
-.autocomplete-wrapper div {
-  width: 70%;
-}
-.autocomplete-wrapper input,
-.dropdown {
-  height: 3vh;
-  width: 33%;
-  margin-left: 73%;
-  border-color: #0f67ff;
-  box-shadow: none;
-  outline: none;
-}
-.stocks-main h2 {
-  margin-left: 20%;
-  color: blue;
-}
-.graph {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-img.search-icon {
+.TickerInput .autocomplete-wrapper{
+  padding-right: 48px;
   position: relative;
+}
+.TickerInput img.search-icon{
   position: absolute;
-  right: 8%;
-  width: 36px;
-} */
+  right: 0;
+  top: 15px;
+}
+
+
+@media only screen and (max-width: 1357px) {
+  div.TickerInput{
+    margin-left: 18%;
+  }
+}
+@media only screen and (max-width: 1072px) {
+  div.TickerInput{
+    margin-left: 6%;
+  }
+  .stocks-header{
+    display: block;
+    padding-top: 30px;
+}
+.stocks-header .byline{
+  text-align: left;
+  padding-top: 12px;
+}
+.TickerInput img.search-icon{
+    top: 3px;
+  }
+ div.TickerInput > header > div.autocomplete-wrapper{
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+ div.TickerInput div.autocomplete-wrapper > div{
+   width: 100%;
+ }
+ div.TickerInput input{
+   margin-bottom: 16px;
+   width: 100%;
+ }
+}
+
+
+
+
+

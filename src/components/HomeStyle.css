@@ -6,7 +6,7 @@
 #home-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 42vh;
+  grid-auto-rows: 442px;
   grid-row-gap: 40px; /* Row gap */
   grid-column-gap: 100px; /* Column gap */
 }

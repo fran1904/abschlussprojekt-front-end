@@ -34,6 +34,11 @@ export function TickerSymbols() {
             "id": "7",
             "title": "BRK.B",
             "name": "Berkshire"
+        },
+        {   
+            "id": "8",
+            "title": "INTC",
+            "name": "Intel Corporation"
         }
 
     ]
