@@ -6,7 +6,7 @@ import SideNav from './components/SideNav';
 import MobileNav from './components/MobileNav';
 import NewsPage from './components/NewsPage';
 import CryptoGragh from './components/MOHAMMAD/CryptoGragh';
-import Exchange from './components/Exchange'
+// import Exchange from './components/Exchange'
 
 import {
   BrowserRouter as Router,
@@ -25,7 +25,7 @@ function App() {
         <Route path="/" exact component={ Home } />  
         <Route path="/stocks" component={ StocksPage } /> 
         <Route path="/news" component={ NewsPage } />  
-        <Route path="/forex" component={ Exchange } /> 
+        {/* <Route path="/forex" component={ Exchange } />  */}
         <Route path="/crypto" component={ CryptoGragh} /> 
     </Switch>
   
