@@ -10,7 +10,13 @@
   border-collapse: collapse;
   width: 100%;
 }
-#crypto-table {
+.crypto-table tr:nth-of-type(3),
+tr:nth-of-type(5),
+tr:nth-of-type(7) {
+  background-color: rgba(254, 240, 240, 1);
+}
+.crypto-table {
+  display: inline-block;
   border-collapse: collapse;
   width: 100%;
   border-bottom: 1px solid #667c99;
@@ -55,13 +61,33 @@
 
 .out-map {
   width: 70%;
+  background-color: rgba(254, 240, 240, 1);
 }
 .out-map td {
   font-size: 20px;
 }
-@media only screen and (max-width: 1130px) {
+.exchageTable td {
+  padding: 3.7%;
+}
+.class-thead td {
+  border-bottom: 2px solid #667c99;
+}
+.exchageTable td.strong {
+  font-weight: 700;
+  background-color: rgba(254, 240, 240, 1);
+}
+
+@media only screen and (max-width: 1300px) {
   #crypto-container {
     font-size: 15px;
+  }
+  .exchageTable td {
+    padding: 4% 3%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .exchageTable td {
+    width: 15%;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -69,6 +95,7 @@
     font-size: 18px;
   }
 }
+
 @media only screen and (max-width: 600px) {
   #crypto-container {
     font-size: 15px;
@@ -78,6 +105,9 @@
   }
   .name-img {
     font-size: 20px;
+  }
+  .exchageTable td {
+    width: 6%;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -90,8 +120,13 @@
   .name-img {
     font-size: 15px;
   }
+  .exchageTable td {
+    width: 1%;
+
+    font-size: 15px;
+  }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (min-width: 375px) {
   #crypto-container {
     font-size: 10px;
   }
@@ -101,69 +136,112 @@
   .name-img {
     font-size: 13px;
   }
+  .exchageTable td {
+    width: 0.7%;
+    font-size: 15px;
+  }
 }
 
 /* CryptoGraphStyle____________________ */
 
-#stocks-header {
-  display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  margin-left: 10%;
-  padding-top: 2%;
-  /* margin-top: 2%; */
-  margin-bottom: 4%;
+* {
+  box-sizing: border-box;
 }
-#stocks-header p {
-  width: 50%;
-}
-#autocomplete-wrapper {
-  width: 100%;
-}
-#autocomplete-wrapper div {
-  width: 70%;
+div#TickerInput {
+  color: #444444;
+  height: 100vh;
+  margin-left: 20%;
 }
 #autocomplete-wrapper input {
-  height: 3vh;
-  width: 90%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: 14px;
+  width: 100%;
+  background: #fef8f8;
+}
+
+#autocomplete-wrapper input:focus {
   border-color: #0f67ff;
   box-shadow: none;
   outline: none;
 }
-#stocks-main h2 {
-  margin-left: 20%;
-  color: blue;
-}
-#graph1 {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-#graph2 {
-  display: none;
-}
-#graph3 {
-  display: none;
-}
-#graph4 {
-  display: none;
-}
-#graph5 {
-  display: none;
-}
-#graph6 {
-  display: none;
-}
-img#search-icon {
-  position: relative;
-  position: absolute;
 
+#autocomplete-wrapper #dropdown {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  max-height: 280px;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border: 1px solid #0f67ff;
+  border-top: none;
+}
+
+#autocomplete-wrapper #item {
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 15px;
+}
+
+#autocomplete-wrapper #item#selected-item {
+  background-color: #0069ff;
+  color: #fafbfc;
+}
+
+#autocomplete-wrapper #item:hover {
+  background-color: #0069ff;
+  color: #fafbfc;
+}
+
+h2#headline {
+  margin: 30px 0 0 0;
+  font-size: 2rem;
+}
+#stock-crypto p {
+  width: 70%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+#stocks-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3%;
+}
+div#autocomplete-wrapper > div {
+  width: 350px;
+}
+
+img#search-icon {
+  display: inline-block;
+  margin-left: 12px;
   width: 36px;
+}
+div#autocomplete-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+main#stocks-main {
+  padding: 0 3%;
+}
+p#byline {
+  color: #666666;
+}
+
+div#graph {
+  text-align: center;
+}
+
+#stocks-displayed-firm {
+  margin-bottom: 0;
 }
 
 /* Graph Responsiv */
 
-@media only screen and (max-width: 1100px) {
+/* @media only screen and (max-width: 1100px) {
   #graph1 {
     display: none;
     justify-content: center;
@@ -253,11 +331,14 @@ img#search-icon {
     justify-content: center;
     width: 100%;
   }
+<<<<<<< HEAD
+=======
 }
 /* @media only screen and (max-width: 450px) {
   #graph6 {
     transform: rotate(-90deg);
   }
+>>>>>>> 92ca4106ed8787865b8ecfe025385d4866cc071e
 } */
 
 #crypto-container {
@@ -266,4 +347,10 @@ img#search-icon {
 p#name {
   font-size: 1.2rem;
 }
+<<<<<<< HEAD
 
+=======
+.exchageTable thead {
+  width: 100%;
+}
+>>>>>>> fc6b53cd23ad13bd0d22cddd11698c2c3ebcd97e

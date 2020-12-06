@@ -95,7 +95,7 @@ class Stock extends Component {
                 y: this.state.yAxisVals,
                 type: "scatter",
                 mode: "lines+markers",
-                marker: { color: "blue" },
+                marker: { color: "006699" },
               },
             ]}
             layout={{
@@ -105,7 +105,7 @@ class Stock extends Component {
             }}
           />
           </div>
-          <div id="graph2">
+          {/* <div id="graph2">
           <Plot
             data={[
               {
@@ -198,7 +198,7 @@ class Stock extends Component {
             }}
           />
           
-          </div>
+          </div> */}
           
         </main>
       </div>

@@ -99,17 +99,17 @@ class Exchange extends Component {
   render() {
     return (
       <section id="exchange-section">
-        <h2 class="exchange-h2">Currency converter</h2>
+        <h2 className="exchange-h2">Currency converter</h2>
         {this.state.isLoaded ? (
           <section id="converter">
             <div className="convert">
               {/* <div className="single-currency"> */}
-              <h2 class="convert_h2">Convert from:</h2>
+              <h2 className="convert_h2">Convert from:</h2>
 
               <select
                 value={this.state.baseCurrency}
                 onChange={this.handleSelectBaseCurrency}
-                class="convert-drop_menu"
+                className="convert-drop_menu"
               >
                 {/* <option key="EURO" value="1">EUR : Euro</option> */}
                 {Object.keys(this.state.data.rates).map((currency, key) => (
@@ -121,7 +121,7 @@ class Exchange extends Component {
               </select>
 
               <div className="convert-amount">
-                <h2 class="amount_h2">Amount:</h2>
+                <h2 className="amount_h2">Amount:</h2>
                 <input
                   type="number"
                   name="amountToConvert"
@@ -137,12 +137,12 @@ class Exchange extends Component {
               className="convert_arrows"
             />
             <div className="convert">
-              <h2 class="convert_h2">Convert to:</h2>
+              <h2 className="convert_h2">Convert to:</h2>
 
               <select
                 value={this.state.finalCurrency}
                 onChange={this.handleSelectFinalCurrency}
-                class="convert-drop_menu"
+                className="convert-drop_menu"
               >
                 {/* <option key="EUR" value="1">EUR : Euro</option> */}
                 {Object.keys(this.state.data.rates).map((currency, key) => (
@@ -157,7 +157,7 @@ class Exchange extends Component {
                 ;
               </select>
               <div className="convert-amount">
-                <h2 class="amount_h2">Amount:</h2>
+                <h2 className="amount_h2">Amount:</h2>
                 <input
                   type="number"
                   name="amountInverseToConvert"

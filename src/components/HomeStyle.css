@@ -1,44 +1,48 @@
-.home-container{
+.home-container {
   margin-left: 18%;
   padding: 20px 2% 2% 2%;
-  color: #4C4C66;
+  color: #4c4c66;
 }
-#home-main{
+#home-main {
   display: grid;
-  grid-template-columns: 1fr 1fr;  
+  grid-template-columns: 1fr 1fr;
   grid-auto-rows: 442px;
   grid-row-gap: 40px; /* Row gap */
-  grid-column-gap: 100px;  /* Column gap */
+  grid-column-gap: 100px; /* Column gap */
 }
-h2.home-headline{
+h2.home-headline {
   font-size: 2rem;
 }
-#home-main .box1, .box2, .box3, .box4{
+#home-main .box1,
+.box2,
+.box3,
+.box4 {
   border: 1px solid #d5d5d5;
   padding: 3%;
   overflow: hidden;
 }
-#home-main > div.box1{
+#home-main > div.box1 {
   overflow-y: scroll;
 }
-.home-headline, .byline{
+.home-headline,
+.byline {
   margin-bottom: 12px !important;
 }
 
 /* News homepage mods */
-.home-container .header ul{
+.home-container .header ul {
   display: none;
 }
-.home-container div.header{
+.home-container div.header {
   display: none;
 }
-.home-container .header ul{
+.home-container .header ul {
   display: none;
 }
-.home-container .articles{
+.home-container .articles {
   border: none;
 }
-.home-container .divs{
+.home-container .divs {
   width: 100%;
   display: block;
   margin: 0;
@@ -48,87 +52,38 @@ h2.home-headline{
   width: 100%;
 }
 .home-container .articles img:not(:first-child) {
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 .home-container .articles h1 {
   margin: 10px;
 }
-.home-container article.articles{
+.home-container article.articles {
   margin-bottom: 20px;
 }
-.home-container .box2{
+.home-container .box2 {
   overflow-y: scroll;
 }
 
 @media only screen and (max-width: 1700px) {
-  #home-main{
-      grid-column-gap: 40px;
-   }
+  #home-main {
+    grid-column-gap: 40px;
+  }
 }
-
 
 @media only screen and (max-width: 1200px) {
-  #home-main{
-    grid-template-columns: 1fr;  
+  #home-main {
+    grid-template-columns: 1fr;
   }
-  .home-headline, .byline{
+  .home-headline,
+  .byline {
     text-align: center;
   }
-  .home-container{
+  .home-container {
     margin-left: 0;
     padding: 20px 2% 2% 2%;
-    color: #4C4C66;
+    color: #4c4c66;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* * {
   margin: 0;
@@ -155,5 +110,3 @@ h2.home-headline{
     grid-template-columns: repeat(1, 1fr);
   }
 } */
-
-

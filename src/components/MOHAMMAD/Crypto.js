@@ -10,8 +10,6 @@ const Crypto = ({
     prozent
 }) => {
     return ( 
-<main id="crypto-container">
-    <table className="crypto-table">
        <tr>
             <td className="name-img">
               <img src={Image} alt=""/>
@@ -28,9 +26,6 @@ const Crypto = ({
                   )}
             </td>
         </tr>
-  </table>
-</main>
-
      );
 }
  
