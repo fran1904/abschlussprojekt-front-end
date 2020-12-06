@@ -98,10 +98,13 @@ class Exchange extends Component {
 
   render() {
     return (
+      <div className="forex-wrap">
+        <h2 className="forex-title">Currency Converter</h2>
+        <p className="forex-byline">Use the tool below to convert any currency fast.</p>
       <section id="exchange-section">
-        <h2 className="exchange-h2">Currency converter</h2>
         {this.state.isLoaded ? (
           <section id="converter">
+           
             <div className="convert">
               {/* <div className="single-currency"> */}
               <h2 className="convert_h2">Convert from:</h2>
@@ -174,6 +177,7 @@ class Exchange extends Component {
           "Loading"
         )}
       </section>
+      </div>
     );
   }
 }

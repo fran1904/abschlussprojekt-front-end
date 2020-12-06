@@ -1,7 +1,7 @@
 .divs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2px;
+  grid-row-gap: 50px;
   margin-left: 20%;
   font-size: 15px;
   padding-top: 10%;
@@ -18,7 +18,7 @@
   height: 25vh;
 }
 .articles {
-  border: 1px solid #667c99;
+  border: 1px solid #d5d5d5;
 
   text-align: center;
   width: 90%;
@@ -27,7 +27,7 @@
   padding: 5%;
   text-align: center;
 }
-button a {
+/* button a {
   text-decoration: none;
   color: #667c99;
 }
@@ -41,11 +41,11 @@ button {
     rgba(251, 232, 233, 0.31) 57.44%,
     rgba(252, 252, 255, 0.57) 100%
   );
-}
-button:hover {
+} */
+/* button:hover {
   background: rgba(254, 240, 240, 1);
   border: none;
-}
+} */
 h6 {
   padding-top: 10%;
 }
@@ -56,7 +56,7 @@ h6 {
   width: 90%;
 }
 .articles {
-  border: 0.5px solid black;
+  border: 1px solid #d5d5d5;
   background: white;
   text-align: center;
   width: 90%;
@@ -67,25 +67,34 @@ h6 {
 #content {
   padding: 5%;
   text-align: center;
+  color: #444444;
 }
 button a {
   text-decoration: none;
-  color: #4c4c66;
+  color: #ffffff;
 }
 button {
-  width: 30%;
-  height: 3vh;
-  border-radius: 5px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 246, 240, 0.38) 0%,
-    rgba(251, 232, 233, 0.31) 57.44%,
-    rgba(252, 252, 255, 0.57) 100%
-  );
+  width: 60%;
+  background: #53B9EA;
+  color: #ffffff !important;
+  font-size: 1.2rem;
+  line-height: 0.15;
+  border: none;
+  padding: 1.2rem .75rem;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 700;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: background .5s ease;
 }
 button:hover {
-  background: rgba(254, 240, 240, 1);
-  border: none;
+  background: rgb(21, 164, 230);
+
 }
 h6 {
   padding-top: 10%;
@@ -112,8 +121,14 @@ h6 {
   font-family: Helvetica Neue;
   font-size: 15px;
   line-height: 16px;
-  color: #6f6c99;
+  color: #444444;
   opacity: 0.7;
+}
+div.divs > article h1{
+  color: #444444;
+}
+.articles{
+  color: #444444;
 }
 
 @media screen and (max-width: 1350px) {
