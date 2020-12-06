@@ -20,16 +20,14 @@ class NewsPage extends Component {
             <div> 
                  < HeaderNews />
             <div className="divs">
-             
-                {this.state.data.map((abc, i) =>
-
-                    <article className="articles" key={abc.id}>
+                {this.state.data.map((abc,id) =>
+                    <article className="articles" key={id}>
                         <img src={abc.urlToImage} alt=""></img>
                         <h1>{abc.title}</h1>
-                        <p>{abc.content}</p>
-                        <a href={abc.url}>Read More</a>
+                        <p id='content'>{abc.content}</p>
+                      <button>  <a  href={abc.url}>Read More</a></button>
                         <h6>{abc.publishedAt}</h6>
-                        <p>{abc.author}</p>
+                        <p id='author'>{abc.author}</p>
                     </article>)}
                     
             </div>

@@ -87,7 +87,25 @@ class Stock extends Component {
           {/* <p id="byline">With all of the tools available in today's market</p> */}
           <h2 id="stocks-displayed-firm">{this.state.initialLoadOver ? this.state.tickerValue : 'BTC'}</h2>
           {/* <h2 id="stocks-displayed-firm">{this.state.tickerValue}</h2> */}
-          <div id="graph">
+          <div id="graph1">
+          <Plot
+            data={[
+              {
+                x: this.state.xAxisVals,
+                y: this.state.yAxisVals,
+                type: "scatter",
+                mode: "lines+markers",
+                marker: { color: "006699" },
+              },
+            ]}
+            layout={{
+              title: "Timeframe: Daily",
+              width: 1200,
+              height: 800
+            }}
+          />
+          </div>
+          {/* <div id="graph2">
           <Plot
             data={[
               {
@@ -100,13 +118,91 @@ class Stock extends Component {
             ]}
             layout={{
               title: "Timeframe: Daily",
-              width: 1200,
-              height: 800
+              width: 1000,
+              height: 700
             }}
           />
           </div>
+          <div id="graph3">
+          <Plot
+            data={[
+              {
+                x: this.state.xAxisVals,
+                y: this.state.yAxisVals,
+                type: "scatter",
+                mode: "lines+markers",
+                marker: { color: "blue" },
+              },
+            ]}
+            layout={{
+              title: "Timeframe: Daily",
+              width: 850,
+              height: 700
+            }}
+          />
+          
+          </div>
+          <div id="graph4">
+          <Plot
+            data={[
+              {
+                x: this.state.xAxisVals,
+                y: this.state.yAxisVals,
+                type: "scatter",
+                mode: "lines+markers",
+                marker: { color: "blue" },
+              },
+            ]}
+            layout={{
+              title: "Timeframe: Daily",
+              width: 750,
+              height: 600
+            }}
+          />
+          
+          </div>
+          <div id="graph5">
+          <Plot
+            data={[
+              {
+                x: this.state.xAxisVals,
+                y: this.state.yAxisVals,
+                type: "scatter",
+                mode: "lines+markers",
+                marker: { color: "blue" },
+              },
+            ]}
+            layout={{
+              title: "Timeframe: Daily",
+              width: 650,
+              height: 500
+            }}
+          />
+          
+          </div>
+          <div id="graph6">
+          <Plot
+            data={[
+              {
+                x: this.state.xAxisVals,
+                y: this.state.yAxisVals,
+                type: "scatter",
+                mode: "lines+markers",
+                marker: { color: "blue" },
+              },
+            ]}
+            layout={{
+              title: "Timeframe: Daily",
+              width: 490,
+              height: 400
+            }}
+          />
+          
+          </div> */}
+          
         </main>
       </div>
+      
     );
   }
 }
@@ -324,3 +420,6 @@ export default Stock;
 // }
 
 // export default Stock;
+
+
+

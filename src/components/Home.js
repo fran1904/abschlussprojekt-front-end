@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
 import CryptoTable from "./MOHAMMAD/CryptoTable";
 import AverageDownCalc from "./AverageDownCalc";
 import "./HomeStyle.css";
 import NewsPage from "./NewsPage";
+import MoneyTable from './MOHAMMAD/MoneyTable';
 
 const Home = () => {
   return (
@@ -21,8 +22,10 @@ const Home = () => {
           <AverageDownCalc />
         </div>
         <div className="box4">
-        <AverageDownCalc />
+        <MoneyTable />
         </div>
+       
+
       </main>
     </div>
   );
