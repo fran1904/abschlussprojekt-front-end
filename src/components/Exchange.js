@@ -14,6 +14,7 @@ class Exchange extends Component {
         baseCurrency: 1,
         finalCurrency: 1,
         data2: "",
+        currency: ""
       };
     }
  
@@ -46,7 +47,8 @@ class Exchange extends Component {
 
     handleSelectBaseCurrency = (e) => {
         this.setState({ 
-            baseCurrency: e.target.value}
+            baseCurrency: e.target.value,
+        }
         )}
 
     handleSelectFinalCurrency = (e) => {
@@ -86,15 +88,15 @@ class Exchange extends Component {
 
         return(
         <section id="exchange-section">
-            <h2 class="exchange-h2">Currency converter</h2>
+            <h2 className="exchange-h2">Currency converter</h2>
         {this.state.isLoaded ? 
             <section id="converter">
                 
                 <div className="convert">
                     {/* <div className="single-currency"> */}
-                    <h2 class="convert_h2">Convert from:</h2>
+                    <h2 className="convert_h2">Convert from:</h2>
 
-                    <select  value={this.state.baseCurrency} onChange={this.handleSelectBaseCurrency} class="convert-drop_menu">
+                    <select value={this.state.baseCurrency} onChange={this.handleSelectBaseCurrency} className="convert-drop_menu">
                         {/* <option key="EURO" value="1">EUR : Euro</option> */}
 
                         {Object.keys(this.state.data.rates).map(    (currency, key)=>
@@ -104,16 +106,18 @@ class Exchange extends Component {
                     </select> 
                     
                     <div className="convert-amount">
-                        <h2 class="amount_h2">Amount:</h2>
+                        <h2 className="amount_h2">Amount:</h2>
                         <input type="number" name="amountToConvert" value={this.state.amountToConvert} onChange={this.getAmount} className="input-amount">
                         </input>  
                     </div>  
                 </div>   
-                <img src="./arrows-blue-versetzt.png" alt="" className="convert_arrows"/>
+                <div className="arrows">
+                     <img src="./arrows-blue-versetzt.png" alt="" className="convert_arrows"/>
+                </div>
                 <div className="convert">
-                    <h2 class="convert_h2">Convert to:</h2>
+                    <h2 className="convert_h2">Convert to:</h2>
                     
-                    <select  value={this.state.finalCurrency} onChange={this.handleSelectFinalCurrency} class="convert-drop_menu">
+                    <select  value={this.state.finalCurrency} onChange={this.handleSelectFinalCurrency} className="convert-drop_menu">
                     
                         {/* <option key="EUR" value="1">EUR : Euro</option> */}
                         {Object.keys(this.state.data.rates).map((currency, key)=>
@@ -122,7 +126,7 @@ class Exchange extends Component {
                         
                     </select>
                     <div className="convert-amount">
-                        <h2 class="amount_h2">Amount:</h2>
+                        <h2 className="amount_h2">Amount:</h2>
                         <input type="number" name="amountInverseToConvert" value={this.state.amountInverseToConvert} onChange={this.getAmount} className="input-amount"/> 
                     </div>
                 </div> 
