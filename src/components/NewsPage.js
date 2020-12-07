@@ -10,8 +10,8 @@ class NewsPage extends Component {
         fetch('https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=baa351b96cbf41aebb9eca53577868c8')
             .then(Response => Response.json())
             .then(json => {
-                this.setState({ data: json.articles }, () => console.log(this.state.data));
-                console.log(json);
+                this.setState({ data: json.articles });
+       
             })
     }
 
@@ -25,7 +25,7 @@ class NewsPage extends Component {
                         <img src={abc.urlToImage} alt=""></img>
                         <h1>{abc.title}</h1>
                         <p id='content'>{abc.content}</p>
-                      <button>  <a  href={abc.url}>Read More</a></button>
+                      <button><a href={abc.url}>Read More</a></button>
                         <h6>{abc.publishedAt}</h6>
                         <p id='author'>{abc.author}</p>
                     </article>)}

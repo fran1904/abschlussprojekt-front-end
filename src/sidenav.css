@@ -144,20 +144,24 @@ li.newslink::before {
 .logo {
   width: 100%;
 }
+.bm-cross-button{
+  display: none;
+}
 
 @media only screen and (max-width: 1350px) {
   .main-nav ul,
   .main-nav ol {
     padding-left: 0;
   }
-  .bm-item-list{
+  .bm-item-list {
     padding-left: 0;
     padding-right: 0;
   }
+
 }
 
 @media only screen and (max-width: 1200px) {
-  .sidenav{
+  .sidenav {
     display: none;
   }
   .bm-item-list {
@@ -165,81 +169,18 @@ li.newslink::before {
     padding: 0.8em;
   }
   .main-nav ul,
-.main-nav ol {
-  list-style: none;
-  padding-left: 40px;
-}
+  .main-nav ol {
+    list-style: none;
+    padding-left: 40px;
+  }
+  .bm-cross-button{
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 650px) {
-  .bm-burger-button{
+  .bm-burger-button {
     left: 14px;
     top: 14px;
   }
 }
-
-
-
-
-
-
-
-
-
-/* ///////// */
-/* Responsive____________________ */
-/* //////// */
-/* @media only screen and (max-width: 1220px) {
-  .logo {
-    margin-left: -30%;
-    margin-top: 20%;
-    height: 6vh;
-    width: 300px;
-    transform: rotate(-90deg);
-  }
-  .main-nav li {
-    transform: rotate(-90deg);
-    margin-bottom: 90px;
-    margin-top: 70px;
-  }
-}
-@media only screen and (max-width: 850px) {
-  .logo {
-    margin-left: -40%;
-    margin-top: 20%;
-    height: 5vh;
-    width: 300px;
-  }
-}
-@media only screen and (max-width: 560px) {
-  .logo {
-    margin-left: -45%;
-  }
-}
-@media only screen and (max-width: 450px) {
-  .bm-menu-wrap {
-    width: 30% !important;
-    min-height: 150vh !important;
-    overflow-x: hidden;
-  }
-  .bm-menu {
-    min-height: 100vh !important;
-    overflow-x: hidden;
-  }
-  .logo {
-    margin-top: 10%;
-    height: 6vh;
-    width: 600px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .bm-menu {
-    min-height: 150vh !important;
-    overflow-x: hidden;
-  }
-  .logo {
-    margin-top: 10%;
-    height: 6vh;
-    width: 600px;
-  }
-} */

@@ -99,13 +99,13 @@ h2.forex-title{
     font-size: 2rem;
     color: #444444;
     position: absolute;
-    left: 478px;
-    top: 30px
+    padding-left: 20%;
+    top: 30px;
 }
 p.forex-byline{
     color: #444444;
     position: absolute;
-    left: 480px;
+    padding-left: 20%;
     top: 80px
 }
 
