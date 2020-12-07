@@ -10,8 +10,8 @@ class NewsPage extends Component {
         fetch('https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=baa351b96cbf41aebb9eca53577868c8')
             .then(Response => Response.json())
             .then(json => {
-                this.setState({ data: json.articles });
-                console.log(this.state.data)
+                this.setState({ data: json.articles }, () => console.log(this.state.data));
+
             })
     }
 
