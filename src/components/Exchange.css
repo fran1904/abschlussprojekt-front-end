@@ -29,7 +29,7 @@
 .convert {
     display: flex;
     flex-direction: column;
-    width: 270px;
+    width: 45%;
 }
 .convert_h2, .amount_h2 {
     padding-top: 10px;
@@ -37,7 +37,6 @@
     /* font-weight: 300; */
 }
 .convert-drop_menu{
-    /* width: 100%; */
     padding: 10px 0;
     font-size: 1.1rem;
     font-family: 'Roboto', sans-serif;
@@ -52,6 +51,7 @@
     font-weight: 300;
     color: #444444;
 }
+
 .convert_arrows {
     height: 35px;
     width: 35px;
@@ -59,12 +59,15 @@
     left: 47%;
     top: 172px;
 }
+
 @media only screen and (max-width: 980px) {
     #converter {
-      width: 500px;
-      flex-direction: column;
-      height: 400px;
-      margin-top: 8vh;
+        width: 60%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 75vh;
+        margin-top: 8vh;
     }
     .convert {
         width: 100%;
@@ -72,18 +75,20 @@
     .convert_arrows {
         transform: rotate(90deg);
         transition: 1s linear;
-        top: 210px;
     }
+    .arrows {
+        height: 2vh;
+    }
+
 }
 
 #exchange-section input, #exchange-section select{
-
-padding: 12px 20px;
-margin: 8px 0;
-display: inline-block;
-border-radius: 4px;
-box-sizing: border-box;
-font-size: 1.2rem;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
 }
 
 h2.convert_h2, h2.amount_h2{
@@ -110,22 +115,47 @@ p.forex-byline{
 }
 
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 650px) { 
+    .forex-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3vh;
+        justify-content: center;
+    }
+    h2.forex-title {
+        position: unset;
+        font-size: 1.5rem;
+        padding-left: 25%;
+        top: -7vh;
+    }
+    p.forex-byline {
+        position: unset;
+        padding-top: 1vh;
+    }
     #exchange-section {
         display: unset;
+        height: 90vh;
     }
     #converter {
-      width: 80%;
-      margin-top: 3vh;
-      /* height: 800px; */
+        width: 75%;
+        margin-top: 3vh;
+        height: unset;
     }
     .exchange-h2 {
         margin-top: 14vh;
     }
-    .amount_h2 {
-        padding-top: 2vh;
+    .convert {
+        padding: 2vh 0;
     }
-    .convert-drop_menu{ 
-        width: 60px;
+    .arrows {
+        display: none;
+    }
+    /* .convert_arrows {
+        top: 39vh;
+    } */
+    #exchange-section input, #exchange-section select {
+        margin: 4px 0;
+        font-size: 1.1rem;
+        padding: 12px 10px;
     }
 }
