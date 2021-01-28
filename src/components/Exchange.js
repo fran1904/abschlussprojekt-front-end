@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../Exchange.css'
+import './Exchange.css'
+const currencyNames = require('../currencyNames.json')
 
-
-
-class Exchange extends Component {
+  
+class CurrencyExchange extends Component {
     constructor() {
       super();
       this.state = {
@@ -14,48 +14,32 @@ class Exchange extends Component {
         baseCurrency: 1,
         finalCurrency: 1,
         data2: "",
-        currency: ""
+        currencyNames
       };
     }
  
    componentDidMount () {
-    fetch(`http://data.fixer.io/api/latest?access_key=f55714fc68544efcf79c477eded056a2`)
-
-        .then(res => res.json())
-        .then(result => {
-            console.log(result);
-            this.setState(
-                {
-                    data: result,
-                    currencies: Object.keys(result['rates']).sort(),
-                    rates: Object.values(result.rates),
-                }, 
-                () =>  fetch(`http://data.fixer.io/api/symbols?access_key=f55714fc68544efcf79c477eded056a2`)
-                .then(res => res.json())
-                .then(result => {
-                    console.log(result);
-                    this.setState(
-                        {
-                            data2: result,
-                            isLoaded: true
-                        }
-                    )   
+        fetch(`https://api.exchangeratesapi.io/latest?`)
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                this.setState({
+                        data: result,
+                        currencies: Object.keys(result['rates']).sort(),
+                        rates: Object.values(result.rates),
+                        isLoaded: true
                 })
-            )
-        })
+            })
     }
 
     handleSelectBaseCurrency = (e) => {
         this.setState({ 
-            baseCurrency: e.target.value,
-        }
+            baseCurrency: e.target.value}
         )}
 
     handleSelectFinalCurrency = (e) => {
-        // let currency2 = e.target.key
         this.setState({
             finalCurrency: e.target.value,
-            // currency2: e.target.key
         }
         );
     }  
@@ -63,16 +47,16 @@ class Exchange extends Component {
     getAmount = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
-        // amountToConvert: e.target.value
+
         },() => {
             if (event.target.name === "amountToConvert") {
                 this.convertAmount('amountToConvert')
             } else if (event.target.name === "amountInverseToConvert") {
                 this.convertAmount('amountInverseToConvert')
             }
-      
         })
     }
+
     convertAmount =(para) => {
         console.log(this.state.finalCurrency)
 
@@ -85,61 +69,67 @@ class Exchange extends Component {
          
   
     render() {
-
         return(
-        <section id="exchange-section">
-            <h2 className="exchange-h2">Currency converter</h2>
-        {this.state.isLoaded ? 
-            <section id="converter">
-                
-                <div className="convert">
-                    {/* <div className="single-currency"> */}
-                    <h2 className="convert_h2">Convert from:</h2>
+            <div className="forex-wrap">
+                <h2 className="forex-title">Currency Converter</h2>
+                <p className="forex-byline">Use the tool below to convert any currency fast.</p>
+                <section id="exchange-section">
+                    {this.state.isLoaded ? 
+                        <section id="converter">
+                            <div className="convert">
+                                <h2 className="convert_h2">Convert from:</h2>
+                                <select value={this.state.baseCurrency} onChange={this.handleSelectBaseCurrency} className="convert-drop_menu">
+                                    <option key="EURO" value="1" className="option">EUR : Euro</option>
 
-                    <select value={this.state.baseCurrency} onChange={this.handleSelectBaseCurrency} className="convert-drop_menu">
-                        {/* <option key="EURO" value="1">EUR : Euro</option> */}
-
-                        {Object.keys(this.state.data.rates).map(    (currency, key)=>
-                            <option key={key} value={this.state.data.rates[currency]}> 
-                            {currency} : {this.state.data2.symbols[currency]} </option>  
-                        )};
-                    </select> 
+                                    {Object.keys(this.state.data.rates).map((currency, key)=>
+                                        <option key={key} value={this.state.data.rates[currency]}> 
+                                        {currency} : {this.state.currencyNames.map(element => {
+                                            // console.log(element.symbol === currency)
+                                            if (element.symbol === currency) {
+                                                return element.currency_name
+                                            } 
+                                        })
+                                    }
+                                    </option>  )};
+                                </select> 
+                                <div className="convert-amount">
+                                    <h2 className="amount_h2">Amount:</h2>
+                                    <input type="number" name="amountToConvert" value={this.state.amountToConvert} onChange={this.getAmount} className="input-amount">
+                                    </input>  
+                                </div> 
+                            </div>    
+                            <div className="arrows">
+                                <img src="./arrows-blue-versetzt.png" alt="" className="convert_arrows"/>
+                            </div>
+                            
+                            <div className="convert">
+                                <h2 className="convert_h2">Convert to:</h2>
+                            
+                                <select  value={this.state.finalCurrency} onChange={this.handleSelectFinalCurrency} className="convert-drop_menu">
+                                    <option key="EUR" value="1" className="option">EUR : Euro</option >
+                                    {Object.keys(this.state.data.rates).map((currency, key)=>
+                                        <option key={key} value={this.state.data.rates[currency]}> 
+                                            {currency} : {this.state.currencyNames.map(element => {
+                                                // console.log(element.symbol === currency)
+                                                if (element.symbol === currency) {
+                                                    return element.currency_name
+                                                } 
+                                            })
+                                            }
+                                    </option>  )};
+                                </select>
+                                <div className="convert-amount">
+                                    <h2 className="amount_h2">Amount:</h2>
+                                    <input type="number" name="amountInverseToConvert" value={this.state.amountInverseToConvert} onChange={this.getAmount} className="input-amount"/> 
+                                </div>
+                            </div> 
                     
-                    <div className="convert-amount">
-                        <h2 className="amount_h2">Amount:</h2>
-                        <input type="number" name="amountToConvert" value={this.state.amountToConvert} onChange={this.getAmount} className="input-amount">
-                        </input>  
-                    </div>  
-                </div>   
-                <div className="arrows">
-                     <img src="./arrows-blue-versetzt.png" alt="" className="convert_arrows"/>
-                </div>
-                <div className="convert">
-                    <h2 className="convert_h2">Convert to:</h2>
-                    
-                    <select  value={this.state.finalCurrency} onChange={this.handleSelectFinalCurrency} className="convert-drop_menu">
-                    
-                        {/* <option key="EUR" value="1">EUR : Euro</option> */}
-                        {Object.keys(this.state.data.rates).map((currency, key)=>
-                        <option key={key} value={this.state.data.rates[currency]} className="option"> 
-                    {currency}  :  {this.state.data2.symbols[currency]}</option>  )};
-                        
-                    </select>
-                    <div className="convert-amount">
-                        <h2 className="amount_h2">Amount:</h2>
-                        <input type="number" name="amountInverseToConvert" value={this.state.amountInverseToConvert} onChange={this.getAmount} className="input-amount"/> 
-                    </div>
-                </div> 
-               
-         
-                    
-                {/* </section> */}
-            </section>
-                : "Loading"}
-        </section>
-           
-      );
-  }
+                        </section>
+                        : "Loading"}
+                    </section>
+            </div>  
+        );
+    }
 }
   
-export default Exchange;
+export default CurrencyExchange;

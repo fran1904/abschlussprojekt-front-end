@@ -32,7 +32,7 @@ class MobileNav extends React.Component {
       return (
         <div className="mobilenav">
           <Menu
-            width={ '100%' } 
+            width={ '70%' } 
             isOpen={this.state.menuOpen}
             onStateChange={(state) => this.handleStateChange(state)}
           >

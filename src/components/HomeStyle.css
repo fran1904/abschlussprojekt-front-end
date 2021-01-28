@@ -64,6 +64,7 @@ h2.home-headline {
   overflow-y: scroll;
 }
 
+
 @media only screen and (max-width: 1700px) {
   #home-main {
     grid-column-gap: 40px;
@@ -85,28 +86,3 @@ h2.home-headline {
   }
 }
 
-/* * {
-  margin: 0;
-  padding: 0;
-}
-
-#Home-main > div {
-  width: 100%;
-  height: 50vh;
-  border: 4px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#Home-main {
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-@media only screen and (max-width: 1000px) {
-  #Home-main {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-} */

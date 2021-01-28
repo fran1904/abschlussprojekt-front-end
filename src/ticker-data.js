@@ -39,6 +39,36 @@ export function TickerSymbols() {
             "id": "8",
             "title": "INTC",
             "name": "Intel Corporation"
+        },
+        {   
+            "id": "9",
+            "title": "INCY",
+            "name": "Incyte Corp."
+        },
+        {   
+            "id": "10",
+            "title": "ILMN",
+            "name": "Illumina Corp."
+        },
+        {   
+            "id": "11",
+            "title": "IR",
+            "name": "Ingersoll Corp."
+        },
+        {   
+            "id": "12",
+            "title": "IBM",
+            "name": "International Business MAchines"
+        },
+        {   
+            "id": "13",
+            "title": "INFO",
+            "name": "IHS Markit"
+        },
+        {   
+            "id": "14",
+            "title": "ICE",
+            "name": "Intercontinental"
         }
 
     ]
